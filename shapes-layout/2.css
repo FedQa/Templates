@@ -1,0 +1,89 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+.block {
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.block > div {
+    width: 700px;
+    background-color: cornflowerblue;
+    position: relative;
+    left: -50%;
+    z-index: 1;
+}
+.block > div:nth-child(2) {
+    left: -100%;
+    background-color: white;
+    clip-path: polygon(65% 0%, 100% 50%, 65% 100%, 0% 100%, 35% 50%, 0% 0%);
+    width: 700px;
+    z-index: 2;
+    display: grid;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.block > div:nth-child(3) {
+    width: 80vw;
+    left: -100%;
+    background: url('https://w-dog.ru/wallpapers/9/14/292334687092723/pesok-plyazh-sledy-more-palmy-kamni-nebo-oblaka-zakat.jpg') 30% 70% / cover;
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
+}
+@media (max-width: 1120px) {
+    .block > div:nth-child(3){
+        left: -140%;
+    }
+}
+
+.line {
+    position: absolute;
+    top: 6%;
+    height: 50%;
+    right: 35%;
+    width: 2px;
+    background-color: white;
+    transform: rotate(-39deg);
+}
+.margin {
+margin-left: 90px;
+}
+.margin:first-child {
+    margin-top: 70px;
+}
+.margin *:not(.margin)
+{
+    margin-bottom: 50px;
+}
+.title {
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #333;
+}
+    .title span:last-child {
+        display: block;
+        margin-left: 30px;
+    }
+.item {
+    max-width: 200px;
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 1px;
+    color: #333;
+}
+.item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 3px;
+    left: 0;
+    top: -10px;
+    height: 40px;
+    background-color: #333333;
+}
